@@ -3,7 +3,7 @@ import Cart from './Cart';
 import PriceTotal from './PriceTotal';
 //import firebase from '../firebase';
 
-const Shopcart = ({carts, passCart, total ,passTotal, passSubmit}) => {
+const Shopcart = ({carts, passCart, total ,passTotal, passSubmit, handleSubmit}) => {
    
   const getTotal = useCallback(() => {
         const res = Array.from(carts).reduce((prev, item) => {
@@ -72,8 +72,8 @@ const Shopcart = ({carts, passCart, total ,passTotal, passSubmit}) => {
 
 const handleToSql = (carts) => {
 
-  passSubmit(true);
-  //cleanCart();
+  passSubmit([...handleSubmit, carts]);
+  cleanCart();
 }
 
   const cleanCart = () => {

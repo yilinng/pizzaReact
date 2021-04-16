@@ -11,17 +11,12 @@ const App = () => {
 
   const [carts, setCarts] = useState('');
   const [total, setTotal] = useState(0);
-  const [clickItem, setClickItem] = useState(false);
+  const [handleSubmit, setHandleSubmit] = useState([]);
 
 	useEffect(() => {
-	  console.log(carts, clickItem);
+	  console.log(handleSubmit);
 
-	},[carts, clickItem]);
-
-
-	useEffect(() => {
-	  console.log(total);
-	},[total]);
+	},[handleSubmit]);
 
   return (
     <FoodContextProvider>
@@ -34,11 +29,11 @@ const App = () => {
           )}/>
           <Route path='/shopcart'
            render={(props)=> (<Shopcart {...props} 
-           carts={carts} passCart={setCarts} total={total} passTotal={setTotal} passSubmit={setClickItem}/>
+           carts={carts} passCart={setCarts} total={total} passTotal={setTotal} passSubmit={setHandleSubmit} handleSubmit={handleSubmit}/>
           )}/>
            <Route path='/orderItems'
            render={(props)=> (<OrderItems {...props} 
-           carts={carts} total={total} />
+            handleSubmit={handleSubmit} />
            )}/>
 
           </BrowserRouter>  
