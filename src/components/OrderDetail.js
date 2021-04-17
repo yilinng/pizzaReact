@@ -4,7 +4,7 @@ const OrderDetail = ({handle}) => {
 
 
 	return(
-		<div className="orderItem w-2/4 overflow-auto h-32 m-auto">			
+		<div className="orderItem w-3/4 md:w-2/4 overflow-auto h-24 m-auto">			
 			{handle &&
 				handle.map(cart => (
 					<ul className="cart list-disc h-auto bg-gray-100" key={cart.id}>

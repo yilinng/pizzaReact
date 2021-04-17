@@ -7,14 +7,14 @@ const AllMenu = ({products, addCart}) => {
 	}
 
 	return(
-	<div className="allmenu grid grid-cols-1 xl:grid-cols-3 gap-2 xl:gap-10 place-items-auto my-10 max-w-2xl mx-auto h-auto">
+	<div className="allmenu grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-10 place-items-auto my-10 max-w-2xl mx-auto h-auto">
 
 		{products.map(product => {
 		return (
-				<div className="cursor-pointer" key={product.id} data-id={product.id}>
+				<div className="my-6 md:my-auto" key={product.id} data-id={product.id}>
 					<form className="flex flex-col rounded-lg mb-10 shadow-xl" onSubmit={handleSubmit}>
 						<div className="mx-auto">
-							<img className="rounded-lg max-h-32" src={product.image} alt={product.title}/>
+							<img className="rounded-lg h-32" src={product.image} alt={product.title}/>
 						</div>
 						<div className="flex flex-col">
 						<span className="text-2xl font-extrabold text-center my-2 mx-auto">{product.title}</span>

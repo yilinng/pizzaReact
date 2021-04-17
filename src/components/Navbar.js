@@ -14,7 +14,7 @@ const Navbar = ({carts}) => {
 	return (
 		<div className="navbar top-0 pt-6 px-4 sm:px-6 lg:px-8">
     <div className="menu block md:hidden absolute mr-6 right-0 flex flex-col cursor-pointer" onClick={() => setShow(!show)}>
-      <img className="w-10 h-10" src={menu} alt="menu"/>
+      <img className="w-10 h-10 z-20" src={menu} alt="menu"/>
       <span className="font-mono mr-2">Menu</span>
     </div>
 		<nav className="laptop relative hidden md:block flex items-center justify-between sm:h-10 lg:justify-start">
@@ -37,7 +37,7 @@ const Navbar = ({carts}) => {
 
   {/*mobile vr. */}
     {show ? (
-      <nav className="block lg:hidden mobile shadow-xl py-2">
+      <nav className="block md:hidden mobile shadow-xl py-2">
             <div className="flex justify-center">
               <Link to="/" aria-label="Home">
                 <span className="logo">Pizza</span>
